@@ -4,7 +4,7 @@ www# window-service-demo
 
 配置文件示例：
 
-'''
+'''xml
 <?xml version="1.0" encoding="utf-8"?>
 <configuration>
   <startup>
