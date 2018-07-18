@@ -4,17 +4,15 @@ www# window-service-demo
 
 配置文件示例：
 
-'''xml
-<?xml version="1.0" encoding="utf-8"?>
-<configuration>
-  <startup>
-    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.0"/>
-  </startup>
-  <appSettings>
-    <add key="ServiceName" value="avl-rabbitmq"/>
-    <add key="ServiceDescription" value="ccs 系统的后台 rabbitmq 服务，基于docker镜像建立的"/>
-    <add key="StartCmd" value="docker run -d --name avl-rabbitmq -it --net host -v /e/postgres/data:/var/postgresql/data docker-registry.innovation.os/base/postgres:latest"/>
-    <add key="StopCmd" value="docker stop -t 3 avl-rabbitmq &amp;&amp; docker rm avl-rabbitmq -f"/>
-  </appSettings>
-</configuration>
-'''
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;configuration&gt;
+  &lt;startup&gt;
+    &lt;supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.0"/&gt;
+  &lt;/startup&gt;
+  &lt;appSettings&gt;
+    &lt;add key="ServiceName" value="avl-rabbitmq"/&gt;
+    &lt;add key="ServiceDescription" value="ccs 系统的后台 rabbitmq 服务，基于docker镜像建立的"/&gt;
+    &lt;add key="StartCmd" value="docker run -d --name avl-rabbitmq -it --net host -v /e/postgres/data:/var/postgresql/data docker-registry.innovation.os/base/postgres:latest"/&gt;
+    &lt;add key="StopCmd" value="docker stop -t 3 avl-rabbitmq &amp;&amp; docker rm avl-rabbitmq -f"/&gt;
+  &lt;/appSettings&gt;
+&lt;/configuration&gt;
