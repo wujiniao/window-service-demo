@@ -3,6 +3,8 @@ www# window-service-demo
 要求启动和结束服务方式都是cmd命令 ，服务名，服务描述，启动服务命令， 和结束服务命令 都可以在 app.config 文件中配置
 
 配置文件示例：
+
+'''
 <?xml version="1.0" encoding="utf-8"?>
 <configuration>
   <startup>
@@ -15,4 +17,4 @@ www# window-service-demo
     <add key="StopCmd" value="docker stop -t 3 avl-rabbitmq &amp;&amp; docker rm avl-rabbitmq -f"/>
   </appSettings>
 </configuration>
-
+'''
