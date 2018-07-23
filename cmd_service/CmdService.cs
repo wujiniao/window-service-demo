@@ -3,6 +3,7 @@ using System.Configuration;
 using System.Diagnostics;
 using System.IO;
 using System.ServiceProcess;
+using System.Linq;
 
 namespace cmd_service
 {
@@ -38,7 +39,14 @@ namespace cmd_service
         {
             evt.WriteEntry(string.Format("启动服务{0}", ServiceName));
             WriteLog(string.Format("启动服务{0}", ServiceName));
+
             string output = string.Empty;
+            ServiceController[] services = ServiceController.GetServices();
+            if (services.Count(t => t.ServiceName == ServiceName) > 0)
+            {
+                RunCmd(StopCmd, out output);
+            }
+           
             if (RunCmd(StartCmd, out output))
             {
                 evt.WriteEntry(string.Format("启动服务{0}成功", ServiceName));
